@@ -1,0 +1,23 @@
+{
+  "name": "Text Counter",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "テキストボックス内のテキストの文字数を表示します。",
+  "browser_action": {
+  },
+  "background":{
+      "scripts":["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches" : [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js" : ["jquery.js","text_counter.js"],
+      "css" : ["text_counter.css"],
+      "run_at" : "document_end",
+      "all_frames" : false
+    }
+  ]
+}
